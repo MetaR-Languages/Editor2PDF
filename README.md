@@ -3,7 +3,7 @@ Editor2PDF
 
 Overview
 --------
-This software makes it possible to attach an annotation to an arbitrary MPS editor cell and render the cell to a PDF file output. The software uses iText to output PDF. You will need MPS 3.1 to compile.
+This software makes it possible to attach an annotation to an arbitrary MPS editor cell and render the cell to a PDF file output. The software uses iText to output PDF.
 
 Usage
 -----
@@ -12,11 +12,10 @@ This language provides an annotation that makes it possible to mark an editor ce
 Remember that you must add a dependency on the org.campagnelab.mps.editor2pdf
 language before you can use the annotation. This must be done in every model where you
 need to use the annotation. The intentions will only display if this step has been performed correctly.
-See the book at the bottom if you are not sure how to do this.
 
 Credits
 -------
-PDF files are generated with IText. See http://itext.com/. Editor2PDF was developed by Fabien Campagne to help make figures for the second volume of the MPS Language Workbench book series (see below).
+PDF files are generated with IText. See http://itext.com/. Editor2PDF was originally developed by Fabien Campagne to help make figures for the second volume of the MPS Language Workbench book series.
 
 License
 -------
@@ -44,7 +43,3 @@ MPS is a powerful platform, but it can be difficult to learn on your own. This b
 
 The MPS Language Workbench: Volume I. 2014. Fabien Campagne (http://books.campagnelab.org).
 ![MPSBook Cover](http://campagnelab.org/files/MPS_Book-Cover-Volume1-small.png) 
-
-What's new?
------------
-See the project [Change Log](https://github.com/CampagneLaboratory/Editor2PDF/wiki/Change-Log).
