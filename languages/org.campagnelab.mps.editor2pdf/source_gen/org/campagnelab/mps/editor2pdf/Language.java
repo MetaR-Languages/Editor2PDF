@@ -16,8 +16,6 @@ import org.campagnelab.mps.editor2pdf.intentions.IntentionsDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptPresentationAspect;
 import org.campagnelab.mps.editor2pdf.structure.ConceptPresentationAspectImpl;
-import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
-import org.campagnelab.mps.editor2pdf.typesystem.TypesystemDescriptor;
 
 public class Language extends LanguageRuntime {
   private final SLanguageId myId;
@@ -63,9 +61,6 @@ public class Language extends LanguageRuntime {
     }
     if (aspectClass == ConceptPresentationAspect.class) {
       return aspectClass.cast(new ConceptPresentationAspectImpl());
-    }
-    if (aspectClass == IHelginsDescriptor.class) {
-      return aspectClass.cast(new TypesystemDescriptor());
     }
     return null;
   }

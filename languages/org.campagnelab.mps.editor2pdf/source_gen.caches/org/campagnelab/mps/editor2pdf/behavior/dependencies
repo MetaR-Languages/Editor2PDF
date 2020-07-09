@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.mps.editor2pdf.behavior.BehaviorAspectDescriptor" file="BehaviorAspectDescriptor.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.behavior.BehaviorAspectDescriptor">
     <classNode dependClassName="jetbrains.mps.core.aspects.behaviour.api.BHDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndex" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.ConceptSwitchIndexBuilder" />
@@ -12,7 +12,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBehaviorAspectDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.behavior.DefaultOutputDirectory__BehaviorDescriptor" file="DefaultOutputDirectory__BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.behavior.DefaultOutputDirectory__BehaviorDescriptor">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
@@ -30,7 +30,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.behavior.EditorAnnotation__BehaviorDescriptor" file="EditorAnnotation__BehaviorDescriptor.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.behavior.EditorAnnotation__BehaviorDescriptor">
     <classNode dependClassName="com.google.common.escape.Escaper" />
     <classNode dependClassName="com.google.common.html.HtmlEscapers" />
     <classNode dependClassName="com.itextpdf.awt.FontMapper" />
@@ -100,7 +100,7 @@
     <classNode dependClassName="org.jfree.graphics2d.svg.SVGHints" />
     <classNode extendsClassName="jetbrains.mps.core.aspects.behaviour.BaseBHDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.behavior.SVGWriter" file="SVGWriter.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.behavior.SVGWriter">
     <classNode dependClassName="java.lang.String" />
   </dependency>
 </dependenciesRoot>

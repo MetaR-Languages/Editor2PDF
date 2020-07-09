@@ -18,6 +18,10 @@
     </file>
   </root>
   <root nodeRef="r:6bb9f222-b46c-45b3-85b5-99e8faaeadce(org.campagnelab.mps.editor2pdf.intentions)/5588184421281454220">
+    <file name="IntentionsDescriptor.java">
+      <node id="5588184421281454220" at="45,47,46,50" concept="2" />
+      <node id="5588184421281454220" at="68,46,69,36" concept="2" />
+    </file>
     <file name="SetFont_Intention.java">
       <node id="5588184421281454220" at="36,0,37,0" concept="10" trace="LOG" />
       <node id="5588184421281454220" at="37,30,38,155" concept="11" />
@@ -46,7 +50,7 @@
       <node id="5588184421281454220" at="92,71,93,30" concept="2" />
       <node id="5588184421282628746" at="96,87,97,50" concept="8" />
       <node id="994696323430398597" at="101,184,102,347" concept="2" />
-      <node id="5588184421282632670" at="103,7,104,357" concept="2" />
+      <node id="5588184421282632670" at="103,7,104,360" concept="2" />
       <node id="5588184421281454220" at="107,48,108,36" concept="8" />
       <node id="5588184421281454220" at="110,34,111,25" concept="8" />
       <node id="8780079275991682854" at="74,10,76,5" concept="0" />
@@ -110,7 +114,7 @@
         <var name="editorContext" id="5588184421281454220" />
         <var name="node" id="5588184421281454220" />
       </scope>
-      <scope id="5588184421281454224" at="100,78,104,357" />
+      <scope id="5588184421281454224" at="100,78,104,360" />
       <scope id="5588184421281454220" at="106,0,110,0" />
       <scope id="5588184421281454220" at="99,0,106,0">
         <var name="editorContext" id="5588184421281454220" />
@@ -144,6 +148,10 @@
     </file>
   </root>
   <root nodeRef="r:6bb9f222-b46c-45b3-85b5-99e8faaeadce(org.campagnelab.mps.editor2pdf.intentions)/8230146836249937609">
+    <file name="IntentionsDescriptor.java">
+      <node id="8230146836249937609" at="38,61,39,49" concept="2" />
+      <node id="8230146836249937609" at="66,47,67,35" concept="2" />
+    </file>
     <file name="Render_Intention.java">
       <node id="8230146836249937609" at="29,0,30,0" concept="10" trace="LOG" />
       <node id="8230146836249937609" at="30,0,31,0" concept="3" trace="myCachedExecutable" />
@@ -155,16 +163,16 @@
       <node id="8230146836249937609" at="49,35,50,17" concept="8" />
       <node id="8230146836249937609" at="53,37,54,122" concept="2" />
       <node id="8230146836249937609" at="55,5,56,30" concept="8" />
-      <node id="5378718574870466410" at="63,418,64,32" concept="8" />
-      <node id="5378718574870467654" at="66,418,67,32" concept="8" />
+      <node id="5378718574870466410" at="63,417,64,32" concept="8" />
+      <node id="5378718574870467654" at="66,417,67,32" concept="8" />
       <node id="5378718574870473326" at="68,7,69,39" concept="8" />
       <node id="8230146836250680942" at="73,32,74,112" concept="2" />
       <node id="5156137522245991638" at="75,7,76,33" concept="2" />
       <node id="9022082025460879630" at="76,33,77,65" concept="7" />
       <node id="5156137522246110330" at="77,65,78,59" concept="2" />
       <node id="5156137522246012205" at="78,59,79,265" concept="7" />
-      <node id="3568214513159194253" at="82,199,83,142" concept="2" />
-      <node id="4727091828984845810" at="85,199,86,142" concept="2" />
+      <node id="3568214513159194253" at="82,198,83,142" concept="2" />
+      <node id="4727091828984845810" at="85,198,86,142" concept="2" />
       <node id="8230146836249937609" at="92,48,93,35" concept="8" />
       <node id="8230146836249937609" at="59,0,61,0" concept="1" trace="IntentionImplementation#()V" />
       <node id="8230146836249937609" at="31,0,34,0" concept="1" trace="Render_Intention#()V" />
@@ -192,11 +200,11 @@
       <scope id="5156137522246001829" at="45,91,46,253" />
       <scope id="8230146836249937609" at="49,35,50,17" />
       <scope id="8230146836249937609" at="53,37,54,122" />
-      <scope id="5378718574870452493" at="63,418,64,32" />
-      <scope id="5378718574870467653" at="66,418,67,32" />
+      <scope id="5378718574870452493" at="63,417,64,32" />
+      <scope id="5378718574870467653" at="66,417,67,32" />
       <scope id="8230146836250680942" at="73,32,74,112" />
-      <scope id="3568214513159192558" at="82,199,83,142" />
-      <scope id="4727091828984845809" at="85,199,86,142" />
+      <scope id="3568214513159192558" at="82,198,83,142" />
+      <scope id="4727091828984845809" at="85,198,86,142" />
       <scope id="8230146836249937609" at="92,48,93,35" />
       <scope id="8230146836249937609" at="59,0,61,0" />
       <scope id="8230146836249937609" at="31,0,34,0" />
@@ -238,6 +246,10 @@
     </file>
   </root>
   <root nodeRef="r:6bb9f222-b46c-45b3-85b5-99e8faaeadce(org.campagnelab.mps.editor2pdf.intentions)/8751972264247518445">
+    <file name="IntentionsDescriptor.java">
+      <node id="8751972264247518445" at="37,47,38,61" concept="2" />
+      <node id="8751972264247518445" at="65,52,66,47" concept="2" />
+    </file>
     <file name="TogglePDFRendering_Intention.java">
       <node id="8751972264247518445" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
       <node id="8751972264247518445" at="28,41,29,155" concept="11" />
@@ -338,6 +350,10 @@
     </file>
   </root>
   <root nodeRef="r:6bb9f222-b46c-45b3-85b5-99e8faaeadce(org.campagnelab.mps.editor2pdf.intentions)/893392931327280422">
+    <file name="IntentionsDescriptor.java">
+      <node id="893392931327280422" at="52,47,53,60" concept="2" />
+      <node id="893392931327280422" at="67,35,68,46" concept="2" />
+    </file>
     <file name="RefreshRenderings_Intention.java">
       <node id="893392931327280422" at="39,0,40,0" concept="10" trace="LOG" />
       <node id="893392931327280422" at="40,0,41,0" concept="3" trace="myCachedExecutable" />
@@ -361,8 +377,8 @@
       <node id="4545757943691933154" at="93,0,94,98" concept="7" />
       <node id="4545757943692018146" at="94,98,95,73" concept="7" />
       <node id="4545757943692021525" at="95,73,96,0" concept="9" />
-      <node id="893392931327325024" at="99,203,100,130" concept="2" />
-      <node id="4545757943692034915" at="101,210,102,130" concept="2" />
+      <node id="893392931327325024" at="99,202,100,130" concept="2" />
+      <node id="4545757943692034915" at="101,209,102,130" concept="2" />
       <node id="893392931327324782" at="105,13,106,0" concept="9" />
       <node id="893392931327417334" at="108,9,109,0" concept="9" />
       <node id="893392931327280422" at="112,48,113,46" concept="8" />
@@ -397,8 +413,8 @@
       <scope id="893392931327303284" at="78,221,79,359" />
       <scope id="893392931327387865" at="83,41,84,676" />
       <scope id="893392931327331143" at="90,36,91,262" />
-      <scope id="4545757943692026031" at="99,203,100,130" />
-      <scope id="4545757943692034914" at="101,210,102,130" />
+      <scope id="4545757943692026031" at="99,202,100,130" />
+      <scope id="4545757943692034914" at="101,209,102,130" />
       <scope id="893392931327280422" at="112,48,113,46" />
       <scope id="893392931327280422" at="69,0,71,0" />
       <scope id="893392931327280422" at="41,0,44,0" />

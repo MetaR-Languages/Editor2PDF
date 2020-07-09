@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="org.campagnelab.mps.editor2pdf.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.intentions.IntentionsDescriptor">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="java.util.Collection" />
@@ -19,7 +19,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SAbstractConcept" />
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionAspectDescriptor" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.intentions.RefreshRenderings_Intention" file="RefreshRenderings_Intention.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.intentions.RefreshRenderings_Intention">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
@@ -56,7 +56,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.intentions.Render_Intention" file="Render_Intention.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.intentions.Render_Intention">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -84,7 +84,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.intentions.SetFont_Intention" file="SetFont_Intention.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.intentions.SetFont_Intention">
     <classNode dependClassName="com.intellij.openapi.util.SystemInfo" />
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FilenameFilter" />
@@ -119,7 +119,7 @@
     <classNode extendsClassName="jetbrains.mps.intentions.AbstractIntentionDescriptor" />
     <classNode extendsClassName="jetbrains.mps.openapi.intentions.IntentionFactory" />
   </dependency>
-  <dependency className="org.campagnelab.mps.editor2pdf.intentions.TogglePDFRendering_Intention" file="TogglePDFRendering_Intention.java">
+  <dependency className="org.campagnelab.mps.editor2pdf.intentions.TogglePDFRendering_Intention">
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />

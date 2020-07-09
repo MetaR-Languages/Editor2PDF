@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-97zl59161ojjb0dxx07nlnt7t07j3cl" />
+<product version="3" modelHash="-cowmzsy16f8fmzsnpbcrrfb0ztnqrnp">
+  <files names="EditorAspectDescriptorImpl.java:NavigateToNode_Editor.java:NavigateToNode_EditorBuilder_a.java:RefTarget_Editor.java:RefTarget_EditorBuilder_a.java:WithRef_Editor.java:WithRef_EditorBuilder_a.java" />
+</product>
 

@@ -18,6 +18,7 @@
   <property name="environment" value="env" />
   <property name="env.JAVA_HOME" value="${java.home}/.." />
   <property name="jdk.home" value="${env.JAVA_HOME}" />
+  <property name="mps.generator.skipUnmodifiedModels" value="false" />
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.mps}/lib/ant/lib/ant-mps.jar" />
@@ -59,6 +60,7 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
+          <module ref="52b81ac7-93fd-4e9e-b972-4995882da6d4(jetbrains.mps.baseLanguage.references.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="34e84b8f-afa8-4364-abcd-a279fddddbe7(jetbrains.mps.editor.runtime)" />
           <module ref="d936855b-48da-4812-a8a0-2bfddd633ac5(jetbrains.mps.lang.behavior.api)" />
@@ -105,10 +107,18 @@
       </module>
     </echoxml>
     <jar destfile="${build.tmp}/default/Editor2PDF-_dl__lbrace_version_rbrace_.zip/Editor2PDF/languages/Editor2PDF/com.itext.jar" duplicate="preserve">
+      <fileset dir="${build.tmp}/java/out/com.itext" />
       <fileset dir="${basedir}/solutions/com.itext" includes="icons/**, resources/**" />
+      <fileset dir="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen" includes="**/trace.info, **/exports, **/*.mps, **/checkpoints" />
       <fileset dir="${build.tmp}/default/com.itext.jar" />
     </jar>
     <jar destfile="${build.tmp}/default/Editor2PDF-_dl__lbrace_version_rbrace_.zip/Editor2PDF/languages/Editor2PDF/com.itext-src.jar" duplicate="preserve">
+      <fileset dir="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen">
+        <exclude name="**/trace.info" />
+        <exclude name="**/exports" />
+        <exclude name="**/checkpoints" />
+        <exclude name="**/*.mps" />
+      </fileset>
       <zipfileset file="${basedir}/solutions/com.itext/com.itext.msd" prefix="module" />
     </jar>
     <mkdir dir="${build.tmp}/default/org.jfreesvg.jar" />
@@ -167,7 +177,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.org.campagnelab.mps.editor2pdf, java.compile.org.jfreesvg" />
+  <target name="compileJava" depends="java.compile.org.campagnelab.mps.editor2pdf, java.compile.com.itext, java.compile.org.jfreesvg" />
   
   <target name="processResources" />
   
@@ -179,8 +189,7 @@
   
   <target name="generate" depends="declare-mps-tasks, fetchDependencies">
     <echo message="generating" />
-    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.8">
-      <plugin path="${artifacts.mps}/plugins/mps-core/META-INF/plugin.xml/../.." />
+    <generate strictMode="true" parallelMode="true" parallelThreads="8" useInplaceTransform="false" hideWarnings="false" createStaticRefs="true" fork="true" targetJavaVersion="1.8" skipUnmodifiedModels="${mps.generator.skipUnmodifiedModels}">
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -228,6 +237,7 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+      <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.smodel.query.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
@@ -242,6 +252,7 @@
       <library file="${artifacts.mps}/lib/mps-editor.jar" />
       <library file="${artifacts.mps}/lib/mps-openapi.jar" />
       <library file="${artifacts.mps}/lib/mps-platform.jar" />
+      <library file="${artifacts.mps}/lib/mps-references.jar" />
       <library file="${artifacts.mps}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${basedir}/solutions/com.itext/com.itext.msd" />
@@ -249,6 +260,7 @@
         <module file="${basedir}/solutions/org.jfreesvg/org.jfreesvg.msd" />
       </chunk>
       <jvmargs>
+        <arg value="-ea" />
         <arg value="-Xmx512m" />
       </jvmargs>
       <macro name="mps_home" path="${mps_home}" />
@@ -262,7 +274,7 @@
   
   <target name="makeDependents" />
   
-  <target name="java.compile.org.campagnelab.mps.editor2pdf" depends="java.compile.org.jfreesvg, fetchDependencies">
+  <target name="java.compile.org.campagnelab.mps.editor2pdf" depends="java.compile.com.itext, java.compile.org.jfreesvg, fetchDependencies">
     <mkdir dir="${org.campagnelab.editor2pdf.home}/languages/org.campagnelab.mps.editor2pdf/source_gen" />
     <mkdir dir="${build.tmp}/java/out/org.campagnelab.mps.editor2pdf" />
     <javac destdir="${build.tmp}/java/out/org.campagnelab.mps.editor2pdf" fork="true" encoding="utf8" includeantruntime="false" source="1.8" target="1.8">
@@ -271,33 +283,36 @@
         <path location="${org.campagnelab.editor2pdf.home}/languages/org.campagnelab.mps.editor2pdf/source_gen" />
       </src>
       <classpath>
+        <pathelement path="${build.tmp}/java/out/com.itext" />
         <pathelement path="${build.tmp}/java/out/org.jfreesvg" />
+        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-behavior-runtime.jar" />
         <fileset file="${artifacts.mps}/lib/mps-closures.jar" />
         <fileset file="${artifacts.mps}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-annotations.jar" />
         <fileset file="${artifacts.mps}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-core.jar" />
         <fileset file="${artifacts.mps}/lib/mps-logging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-references.jar" />
         <fileset file="${artifacts.mps}/lib/mps-messaging.jar" />
         <fileset file="${artifacts.mps}/lib/mps-boot-util.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.mps}/lib/mps-editor-runtime.jar" />
-        <fileset file="${artifacts.mps}/lib/mps-platform.jar" />
         <fileset file="${artifacts.mps}/lib/mps-environment.jar" />
+        <fileset file="${artifacts.mps}/lib/mps-project-check.jar" />
         <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itext-xtra-5.5.0.jar" />
         <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itext-pdfa-5.5.0.jar" />
         <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itextpdf-5.5.0.jar" />
         <fileset file="${org.campagnelab.editor2pdf.home}/solutions/org.jfreesvg/jfreesvg-3.0.jar" />
+        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
         <fileset file="${artifacts.mps}/lib/annotations.jar" />
         <fileset file="${artifacts.mps}/lib/log4j.jar" />
         <fileset file="${artifacts.mps}/lib/jdom.jar" />
         <fileset file="${artifacts.mps}/lib/trove4j.jar" />
-        <fileset file="${artifacts.mps}/lib/ecj-4.7.2.jar" />
-        <fileset dir="${artifacts.mps}/lib" includes="*.jar" />
+        <fileset file="${artifacts.mps}/lib/ecj-4.10.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
         <fileset file="${artifacts.mps}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -315,6 +330,25 @@
     </javac>
     <copy todir="${build.tmp}/java/out/org.campagnelab.mps.editor2pdf">
       <fileset dir="${org.campagnelab.editor2pdf.home}/languages/org.campagnelab.mps.editor2pdf/source_gen" excludes="**/*.java" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.com.itext">
+    <mkdir dir="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen" />
+    <mkdir dir="${build.tmp}/java/out/com.itext" />
+    <javac destdir="${build.tmp}/java/out/com.itext" fork="true" encoding="utf8" includeantruntime="false" source="1.8" target="1.8">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itext-xtra-5.5.0.jar" />
+        <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itext-pdfa-5.5.0.jar" />
+        <fileset file="${org.campagnelab.editor2pdf.home}/solutions/com.itext/itextpdf-5.5.0.jar" />
+      </classpath>
+    </javac>
+    <copy todir="${build.tmp}/java/out/com.itext">
+      <fileset dir="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen" excludes="**/*.java" />
     </copy>
   </target>
   
@@ -336,6 +370,7 @@
   </target>
   
   <target name="cleanSources">
+    <delete dir="${org.campagnelab.editor2pdf.home}/solutions/com.itext/source_gen" />
     <delete dir="${org.campagnelab.editor2pdf.home}/languages/org.campagnelab.mps.editor2pdf/source_gen" />
     <delete dir="${org.campagnelab.editor2pdf.home}/solutions/org.jfreesvg/source_gen" />
   </target>

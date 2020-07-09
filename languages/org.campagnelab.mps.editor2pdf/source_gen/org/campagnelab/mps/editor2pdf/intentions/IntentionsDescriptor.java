@@ -29,8 +29,8 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     }
 
     IntentionFactory[] intentions = EMPTY_ARRAY;
-    SAbstractConcept cncpt_d0f = concept;
-    switch (index_hphjzv_d0f.index(cncpt_d0f)) {
+    SAbstractConcept cncpt = concept;
+    switch (conceptIndex.index(cncpt)) {
       case 0:
         if (true) {
           // Concept: BaseConcept 
@@ -69,5 +69,5 @@ public final class IntentionsDescriptor extends AbstractIntentionAspectDescripto
     rv[3] = new SetFont_Intention();
     return Arrays.asList(rv);
   }
-  private static final ConceptSwitchIndex index_hphjzv_d0f = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L), MetaIdFactory.conceptId(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c9b555cL)).seal();
+  private static final ConceptSwitchIndex conceptIndex = new ConceptSwitchIndexBuilder().put(MetaIdFactory.conceptId(0xceab519525ea4f22L, 0x9b92103b95ca8c0cL, 0x10802efe25aL), MetaIdFactory.conceptId(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L), MetaIdFactory.conceptId(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c9b555cL)).seal();
 }

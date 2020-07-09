@@ -101,7 +101,7 @@ public final class SetFont_Intention extends AbstractIntentionDescriptor impleme
       if ((SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L, 0x2b38d40c9f277226L, "font")) == null)) {
         SLinkOperations.setTarget(node, MetaAdapterFactory.getContainmentLink(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L, 0x2b38d40c9f277226L, "font"), SConceptOperations.createNewNode(MetaAdapterFactory.getConcept(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x2b38d40c9f277222L, "org.campagnelab.mps.editor2pdf.structure.Font")));
       }
-      SPropertyOperations.set(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L, 0x2b38d40c9f277226L, "font")), MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x2b38d40c9f277222L, 0x2b38d40c9f277223L, "filename"), myParameter._1().getAbsolutePath());
+      SPropertyOperations.assign(SLinkOperations.getTarget(node, MetaAdapterFactory.getContainmentLink(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0xc65f8233c993928L, 0x2b38d40c9f277226L, "font")), MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x2b38d40c9f277222L, 0x2b38d40c9f277223L, "filename"), myParameter._1().getAbsolutePath());
     }
     @Override
     public IntentionDescriptor getDescriptor() {

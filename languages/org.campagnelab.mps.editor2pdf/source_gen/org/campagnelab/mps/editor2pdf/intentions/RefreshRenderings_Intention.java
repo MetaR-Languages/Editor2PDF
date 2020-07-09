@@ -96,9 +96,9 @@ public final class RefreshRenderings_Intention extends AbstractIntentionDescript
 
           SNodeOperations.getModel(node).getRepository().getModelAccess().runReadInEDT(new Runnable() {
             public void run() {
-              if (SPropertyOperations.hasValue(annotation, MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x79754067868533ecL, 0x4aa50c0bd1ec9bf1L, "outputFormat"), "1", "1")) {
+              if (SPropertyOperations.hasEnumValue(annotation, MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x79754067868533ecL, 0x4aa50c0bd1ec9bf1L, "outputFormat"), "1")) {
                 EditorAnnotation__BehaviorDescriptor.renderNodeEditorToPDF_id7OORWOlZu74.invoke(annotation, annotation, nodeCell);
-              } else if (SPropertyOperations.hasValue(annotation, MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x79754067868533ecL, 0x4aa50c0bd1ec9bf1L, "outputFormat"), "0", "1")) {
+              } else if (SPropertyOperations.hasEnumValue(annotation, MetaAdapterFactory.getProperty(0x93bc01ac08ca4f11L, 0x9c7d614d04055dfbL, 0x79754067868533ecL, 0x4aa50c0bd1ec9bf1L, "outputFormat"), "0")) {
                 EditorAnnotation__BehaviorDescriptor.renderNodeEditorToSVG_id46q0f$BiLBY.invoke(annotation, annotation, nodeCell);
               }
             }

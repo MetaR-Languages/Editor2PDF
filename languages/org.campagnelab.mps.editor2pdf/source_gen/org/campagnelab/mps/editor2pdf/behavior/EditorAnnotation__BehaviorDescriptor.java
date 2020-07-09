@@ -112,8 +112,8 @@ public final class EditorAnnotation__BehaviorDescriptor extends BaseBHDescriptor
       if (style.isSpecified(StyleAttributes.NAVIGATABLE_NODE)) {
         navNode = (SNode) style.get(StyleAttributes.NAVIGATABLE_NODE);
       }
-      if (style.isSpecified(StyleAttributes.NAVIGATABLE_REFERENCE)) {
-        String referenceRole = style.get(StyleAttributes.NAVIGATABLE_REFERENCE);
+      if (style.isSpecified(StyleAttributes.NAVIGATABLE_SREFERENCE)) {
+        String referenceRole = style.get(StyleAttributes.NAVIGATABLE_SREFERENCE).toString();
         navNode = node.getReferenceTarget(referenceRole);
       }
       if (navNode != null) {
